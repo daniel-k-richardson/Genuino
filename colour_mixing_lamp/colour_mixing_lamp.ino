@@ -6,7 +6,7 @@
  *  
  *  The general idea of this program is of this code is to take
  *  input from three sensors that change depending on how much
- *  light is cast/blocked from them. Thos values are then converted
+ *  light is cast/blocked from them. Those values are then converted
  *  from a range of 0-1023 coming in, to 0-255 going out. Which control
  *  three LED lights. Causing them to dim and change colour based on the
  *  light in a room.
@@ -23,8 +23,8 @@
 /* Function prototypes */
 void displaySensorValues(void);
 void setSenesorValues(void);
-void downScawledSensorValues(void);
-void displayScawledSensorValues(void);
+void downScaledSensorValues(void);
+void displayScaledSensorValues(void);
 
 /* Uno pins */
 enum 
@@ -64,8 +64,8 @@ void loop() {
   setSenesorValues();
   displaySensorValues();
   
-  downScawledSensorValues();
-  displayScawledSensorValues();
+  downScaledSensorValues();
+  displayScaledSensorValues();
 
   writeToLEDS();
 }
@@ -97,7 +97,7 @@ void displaySensorValues(void)
 
 /*  Analog values of the sensors are too high
  *  and must be reduced for digial output. */
-void downScawledSensorValues(void)
+void downScaledSensorValues(void)
 {
   redValue = DOWN_SCALE_VALUE(redSensorValue);
   greenValue = DOWN_SCALE_VALUE(greenSensorValue);
@@ -105,7 +105,7 @@ void downScawledSensorValues(void)
 }
 
 /* Display usable colour values in Serial Monitor */
-void  displayScawledSensorValues(void)
+void  displayScaledSensorValues(void)
 {
   Serial.print("Mapped Sensor Values: /t red: ");
   Serial.print(redValue);
