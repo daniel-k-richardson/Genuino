@@ -23,18 +23,18 @@
 /* Function prototypes */
 void displaySensorValues(void);
 void setSenesorValues(void);
-void downScawlSensorValue(void);
-void displayUsableValues(void);
+void downScawledSensorValues(void);
+void displayScawledSensorValues(void);
 
 /* Uno pins */
 enum 
 {
-  // Uno digital pins.
+  // Uno digital out pins.
   RED_LED_PIN = 9,
   BLUE_LED_PIN = 10,
   GREEN_LED_PIN = 11,
   
-  // Uno analog pins.
+  // Uno analog in pins.
   RED_SENSOR_PIN = A0,
   BLUE_SENSOR_PIN = A1,
   GREEN_SENSOR_PIN = A2
@@ -64,8 +64,8 @@ void loop() {
   setSenesorValues();
   displaySensorValues();
   
-  downScawlSensorValue();
-  displayUsableValues();
+  downScawledSensorValues();
+  displayScawledSensorValues();
 
   writeToLEDS();
 }
@@ -97,7 +97,7 @@ void displaySensorValues(void)
 
 /*  Analog values of the sensors are too high
  *  and must be reduced for digial output. */
-void downScawlSensorValue(void)
+void downScawledSensorValues(void)
 {
   redValue = DOWN_SCALE_VALUE(redSensorValue);
   greenValue = DOWN_SCALE_VALUE(greenSensorValue);
@@ -105,7 +105,7 @@ void downScawlSensorValue(void)
 }
 
 /* Display usable colour values in Serial Monitor */
-void displayUsableValues(void)
+void  displayScawledSensorValues(void)
 {
   Serial.print("Mapped Sensor Values: /t red: ");
   Serial.print(redValue);
