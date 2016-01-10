@@ -1,3 +1,16 @@
+/* light_theremine.ino
+ *  Programmer: Daniel Richardson
+ *  9/1/2016
+ *  The base of this code is from the Genuino projects book.
+ *  I have made a few small changes and improvements to make
+ *  it run a little faster.
+ *  
+ *  This is a simple program, it takes sensor information in 
+ *  from analog using a light sensor. Those values read in are
+ *  then scaled so that it can be outputted as a the piezo tone.
+ */
+
+
 
 /* pins both analog and digital */
 #define LED_PIN 13            // led pin on 13 (the uno board) to show calibrate timer.
